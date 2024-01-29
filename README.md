@@ -9,7 +9,7 @@
 
 >Sobre o Projeto
 
-🌱 O projeto consiste na construção de uma estufa compacta automatizada utilizando uma rede de sensores e processadores controlados por um Arduino, sendo possível realizar o cultivo dentro de um ambiente controlado visando o cultivo de plantas de maneira automática, buscando a simplicidade e praticidade. A implantação deste projeto irá permitir que seja realizada uma melhor administração dos recursos utilizados para garantir o crescimento saudável da planta em seu ambiente, ao regular automaticamente o uso de água, circulação de ar e controlando a temperatura ambiente. Além disso, o projeto também conta com um sistema de banco de dados, utilizando o MySQL, e um site, programado utilizando o Visual Studio Code, para poder visualizar os dados registrados pela estufa.
+🌱 O projeto consiste na construção de uma estufa compacta automatizada utilizando um Arduino, sendo possível realizar o cultivo dentro de um ambiente controlado visando o cultivo de plantas de maneira automática, buscando a simplicidade e praticidade. Além disso, o projeto também conta com um sistema de banco de dados, utilizando o MySQL, e um site para poder visualizar os dados registrados pela estufa.
 
 🖥️ O site visa informar sobre o projeto, com opções de cadastro tanto de usuários quanto de estufas. O seu principal objetivo é a consulta de estufas cadastradas de acordo com cada usuário.
 
