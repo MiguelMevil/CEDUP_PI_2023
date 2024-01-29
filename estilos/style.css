@@ -1,0 +1,906 @@
+body,
+html {
+    margin: 0;
+    height: 100%;
+    padding: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-family: sans-serif;
+    line-height: 1.5;
+    font-family: Raleway;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+/*Barra de Scroll*/
+
+::-webkit-scrollbar {
+    width: 15px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(191, 191, 191);
+}
+
+.dark-mode::-webkit-scrollbar {
+    width: 15px;
+    background: #1e1e1e;
+}
+
+.dark-mode::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(0, 0, 0);
+}
+
+/*Handle*/
+
+::-webkit-scrollbar-thumb {
+    background: rgb(25, 166, 34);
+}
+
+/*Fontes*/
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('src/Raleway-VariableFont_wght.ttf') format('truetype');
+}
+
+/*Estrutura*/
+
+.wrapper {
+    width: 100%;
+    margin: 0 auto;
+}
+
+main {
+    display: block;
+}
+
+.container {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 900;
+    color: #000;
+}
+
+/*Header*/
+
+.head {
+    background-color: rgba(0, 0, 0, 0.342);
+    width: 100%;
+    position: fixed;
+    z-index: 9999;
+    user-select: none;
+}
+
+.head ul {
+    text-align: center;
+}
+
+.head ul li {
+    list-style: none;
+    display: inline-block;
+}
+
+.head ul li a {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 20px;
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 600;
+    padding: 25px;
+    transition: all ease 0.5s;
+}
+
+.head ul li a:hover {
+    background-color: #1b432a85;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.menu-icon .bar {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+    }
+
+    .head ul {
+        display: none;
+        background-color: rgba(0, 0, 0, 0.342);
+        position: absolute;
+        top: 59px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .head ul.active {
+        display: block;
+    }
+
+    .head ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+/*Seções*/
+
+section.module p {
+    margin-bottom: 40px;
+    font-size: 20px;
+    user-select: none;
+    text-align: justify;
+}
+
+section.module:last-child {
+    margin-bottom: 0;
+    user-select: none;
+}
+
+section.module h2 {
+    margin-bottom: 40px;
+    font-size: 35px;
+    user-select: none;
+}
+
+section.module.content {
+    padding: 40px 0;
+    background: #ffffff;
+    height: 60vh;
+    font-family: Raleway;
+    text-align: justify;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.last-content-section {
+    padding: 40px 0;
+    background: #FFF;
+    height: 100%;
+    font-family: Raleway;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/*Dark Mode*/
+
+.dark-mode section.module.content,
+.dark-mode .last-content-section {
+    background: #212529;
+    color: #899095;
+}
+
+.dark-mode section.module h2 {
+    color: #899095;
+}
+
+/*Responsividade*/
+
+@media(max-width: 767px) {
+    section.module.content {
+        height: 70vh;
+    }
+
+    section.module p {
+        font-size: 15px;
+    }
+
+    .last-content-section {
+        padding: 40px 0;
+        background: #FFF;
+        height: 100%;
+        font-family: Raleway;
+    }
+}
+
+@media(max-width: 574px) {
+    .last-content-section {
+        padding: 40px 0;
+        background: #FFF;
+        height: 100%;
+        font-family: Raleway;
+    }
+}
+
+@media(min-width: 768px) and (max-width: 1024px) {
+    .last-content-section {
+        padding: 40px 0;
+        background: #FFF;
+        height: 100%;
+        font-family: Raleway;
+
+    }
+}
+
+section.module.parallax {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh !important;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    user-select: none;
+}
+
+section.module.parallax:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 8;
+    background: -moz-linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 70%, #000 100%);
+    background: -webkit-linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 70%, #000 100%);
+    background: -o-linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 70%, #000 100%);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 70%, #000 100%);
+}
+
+
+/*Fundos*/
+
+section.module.parallax-1 {
+    background-image: url(../img/bg/fundo1.png);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+section.module.parallax-2 {
+    background-image: url(../img/bg/fundo2.png);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+section.module.parallax-3 {
+    background-image: url(../img/bg/fundo3.png);
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dark-mode section.module.parallax-1 {
+    background-image: url(../img/bg/fundo1-dark.png);
+}
+
+.dark-mode section.module.parallax-2 {
+    background-image: url(../img/bg/fundo2-dark.png);
+}
+
+.dark-mode section.module.parallax-3 {
+    background-image: url(../img/bg/fundo3-dark.png);
+}
+
+/*Títulos das Seções*/
+
+section.module.parallax h1 {
+    color: #FFF;
+    text-align: center;
+    font-size: 78px;
+    z-index: 50;
+    text-transform: uppercase;
+    font-family: Raleway;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+    }
+
+    to {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section.module.parallax h1 {
+        font-size: 39px; 
+    }
+}
+
+
+/*Footer*/
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.footer-container {
+    max-width: 1170px;
+    margin: auto;
+    user-select: none;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-image: linear-gradient(to bottom, #1e1e1e, #000000);
+    padding: 70px 0;
+}
+
+.footer-col {
+    width: 35%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 25px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col p {
+    font-size: 16px;
+    color: #b9b9b9;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+    font-family: Raleway;
+}
+
+.footer-col h5 {
+    font-size: 14px;
+    color: #b9b9b9;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+    font-family: Raleway;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #00d60e;
+    height: 2px;
+    box-sizing: border-box;
+    width: 110px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .copyright {
+    font-size: 14px;
+    color: #777777;
+    margin-top: 20px;
+}
+
+.copyright {
+    text-align: center;
+    color: #888;
+    font-family: Raleway;
+    font-size: 80%;
+    margin-top: 25px;
+    user-select: none;
+}
+
+
+/*Responsividade do Footer*/
+
+@media(max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+
+/*Login*/
+
+.login-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.55);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.5s ease-in forwards;
+}
+
+.login-popup-content {
+    padding: 20px;
+    flex-direction: column;
+    width: 400px;
+    background: rgba(255, 255, 255, 0.841);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    border: 3px solid rgb(255, 252, 239);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    user-select: none;
+    animation: slideIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+}
+
+
+.dark-mode .login-popup-content {
+    padding: 20px;
+    flex-direction: column;
+    width: 400px;
+    background: #212529db;
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    border: 3px solid #101315;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    color: #899095;
+}
+
+/**/
+
+.login-popup-content p {
+    cursor: pointer;
+    margin: 5px;
+}
+
+.login-popup-content p:hover {
+    cursor: pointer;
+    color: rgb(25, 166, 34);
+}
+
+.login-popup-content h5 {
+    cursor: pointer;
+}
+
+.dark-mode .login-popup-content h5{
+    color: #899095;
+}
+
+.login-popup-content h5:hover {
+    cursor: pointer;
+    color: rgb(25, 166, 34);
+}
+
+.login-popup-content h2 {
+    font-family: Raleway;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.dark-mode .login-popup-content h2 {
+    color: #899095;
+}
+
+.dark-mode .login-popup-content h3 {
+    color: #899095;
+}
+
+/**/
+
+.close {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.dark-mode .close {
+    color: #899095;
+}
+
+/**/
+
+#campos {
+    display: flex;
+    flex-direction: column;
+}
+
+/*Exibir o perfil*/
+
+#perfil {
+    display: flex;
+    flex-direction: column;
+}
+
+#perfil h3 {
+    font-size: 25px;
+}
+
+#perfil input {
+    border: 3px solid rgb(230, 230, 230);
+    background-color: rgb(240, 240, 240);
+}
+
+.dark-mode #perfil h3 {
+    color: #899095;
+}
+
+.dark-mode #perfil input{
+    border: 3px solid rgb(26, 26, 26);
+    background-color: rgba(16, 16, 16, 0.251);
+}
+
+#perfil textarea {
+    border: 3px solid rgb(230, 230, 230);
+    background-color: rgb(240, 240, 240);
+    font-family: 'Raleway';
+    resize: none;
+}
+
+.dark-mode #perfil textarea{
+    border: 3px solid rgb(26, 26, 26);
+    background-color: rgba(16, 16, 16, 0.251);
+    font-family: 'Raleway';
+    resize: none;
+}
+
+/**/
+
+.central {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.esquerda {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+
+input,
+select, textarea {
+    border-radius: 5px;
+    border: 3px solid rgba(255, 255, 255, 0.336);
+    background-color: rgba(255, 255, 255, 0.251);
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.dark-mode input,
+.dark-mode select, 
+.dark-mode textarea {
+    border-radius: 5px;
+    border: 3px solid rgb(36, 36, 36);
+    background-color: rgba(28, 28, 28, 0.251);
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    color: #899095;
+}
+
+input[type=text]:focus {
+    outline: 2px solid rgb(25, 166, 34);
+}
+
+input[type=password]:focus {
+    outline: 2px solid rgb(25, 166, 34);
+}
+
+textarea:focus {
+    outline: 2px solid rgb(25, 166, 34);
+}
+
+
+.central {
+    text-align: center;
+}
+
+/**/
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+.painel-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 30px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 10px 0;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.painel-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+/*Dark Mode Botão*/
+
+#darkModeButton {
+    width: 50px;
+    height: 50px;
+    background-color: rgb(25, 166, 34);
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    cursor: pointer;
+    z-index: 9999;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 8px;
+}
+
+#darkModeButton i {
+    color: white;
+    font-size: 20px;
+}
+
+/*Carrossel*/
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.carousel-slide {
+    display: none;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+}
+
+.carousel-slide.active {
+    display: block;
+    opacity: 1;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: auto; /* Alterado para 'auto' para melhorar a responsividade */
+    max-height: 500px;
+    border-radius: 15px;
+    transition: transform 0.5s ease;
+}
+
+.carousel button {
+    position: absolute;
+    top: 50%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.carousel button i:hover {
+    color: rgb(209, 209, 209);
+}
+
+.carousel button.carousel-prev {
+    left: 0;
+}
+
+.carousel button.carousel-next {
+    right: 0;
+}
+
+.carousel button i {
+    font-size: 20px;
+}
+
+/* Responsividade do carrossel */
+
+@media (max-width: 600px) {
+    .carousel button {
+        padding: 8px;
+    }
+
+    .carousel button i {
+        font-size: 16px;
+    }
+
+    .carousel-slide img {
+        max-height: 300px; /* Ajuste conforme necessário para melhor se adequar a telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel button {
+        padding: 6px;
+    }
+
+    .carousel button i {
+        font-size: 14px;
+    }
+}
+
+
+/*PopUp aviso*/
+
+.popup {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.popup-content {
+    background: #ffffffdb;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    padding: 50px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+}
+
+.dark-mode .popup-content {
+    background: #212529db;
+    color: #899095;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    padding: 50px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+}
+
+#fecharPopup {
+    background: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 25px;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 20px;
+}
+
+#fecharPopup:hover{
+    background: #45a049;
+}
+
+.popup-content button{
+    height: auto;
+    width: 150px;
+}
+
+
